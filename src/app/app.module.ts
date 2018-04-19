@@ -49,17 +49,14 @@ import { AppRoutingModule } from './app-routing,module';
     WebappsServiceComponent,
     OfficeServiceComponent,
     TemplatesServiceComponent,
-    MobileappsServiceComponent
-
-    
+    MobileappsServiceComponent,
   ],
   imports: [
     MaterializeModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NouisliderModule
-
+    NouisliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
