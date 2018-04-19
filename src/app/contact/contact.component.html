@@ -1,0 +1,47 @@
+<div class="grey lighten-5">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <h4 class="teal-text text-lighten-3 center-text">Beginnen Sie Ihr Projekt</h4><br>
+                <!-- Basic Contact information -->
+                
+                <div class="col s12 m6 l6">
+
+                    
+
+                    <div class="input-field col s6">
+                        <input placeholder="Vorname" id="first_name" type="text">
+                        <label for="first_name">Vorname</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Nachname" id="sur_name" type="text">
+                        <label for="sur_name">Nachname</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="E-Mail" id="email" type="text">
+                        <label for="email">E-Mail</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Kurzbeschreibung des Projects</label>
+                    </div>
+
+                </div>
+
+                <!-- Individual Contact informations -->
+                <div class="col s12 m 6 l6">
+                   
+                    
+                    Budget: {{budgetRange}} Fr.
+                    <nouislider [connect]="[true, false]" [min]="500" [max]="100000" [step]="10" [(ngModel)]="budgetRange" (ngModelChange)="onChange($event)" [disabled]="disabled"></nouislider>
+                    Dauer: {{dauerRange}} Monate
+                    <nouislider [connect]="[true, false]" [min]="1" [max]="12" [step]="1" [(ngModel)]="dauerRange" (ngModelChange)="onChange($event)" [disabled]="disabled"></nouislider>
+                </div>
+                <a class="waves-effect waves-light btn">Senden</a>
+            </div>
+        </div>
+    </div>
+</div>

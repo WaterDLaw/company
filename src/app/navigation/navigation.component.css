@@ -1,0 +1,13 @@
+nav {
+    background-color: #ffffff !important;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+nav ul a{
+    color: black;
+}
+
+nav .brand-logo{
+    color: black;
+}

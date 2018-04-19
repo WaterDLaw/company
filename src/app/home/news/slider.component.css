@@ -1,0 +1,8 @@
+.carousel {
+    height: 500px !important;
+}
+
+
+.carousel-indicators li{
+    background-color: black !important;
+}
