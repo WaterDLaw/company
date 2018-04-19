@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from 'angularfire2/firestore';
 
 @Component({
     selector: 'app-topics',
@@ -6,9 +7,9 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./topics.component.css', '../../app.component.css']
 })
 
-export class TopicsComponent implements OnInit {
-
-    ngOnInit() {
-
+export class TopicsComponent {
+    topics;
+    constructor(db: AngularFirestore) {
+        this.topics = db.collection('topics').valueChanges();
     }
 }

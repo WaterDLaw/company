@@ -2,7 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule } from '@angular/forms';
-import {NouisliderModule} from 'ng2-nouislider/src/nouislider';
+import { NouisliderModule } from 'ng2-nouislider/src/nouislider';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 // Top level Components
 import { AppComponent } from './app.component';
@@ -57,6 +62,10 @@ import { AppRoutingModule } from './app-routing,module';
     AppRoutingModule,
     FormsModule,
     NouisliderModule,
+    AngularFireModule.initializeApp(environment.firebase, 'company'),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
   providers: [],
   bootstrap: [AppComponent]
