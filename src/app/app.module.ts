@@ -28,13 +28,6 @@ import { AboutComponent } from './about/about.component';
 
 // Services
 import { ServicesComponent } from './services/services.component';
-import { CooperatewebServiceComponent } from './services/cooperateweb-services/cooperateweb_services.component';
-import { DesktopappsServiceComponent } from './services/desktopapps-services/desktopapps_services.component';
-import { WebappsServiceComponent } from "./services/webapps-services/webapps_services.component";
-import { OfficeServiceComponent } from "./services/office-services/office_services.component";
-import { TemplatesServiceComponent } from "./services/templates-services/templates_services.component";
-import { MobileappsServiceComponent } from "./services/mobileapps-services/mobileapps_services.component";
-
 import { AppRoutingModule } from './app-routing,module';
 
 @NgModule({
@@ -49,12 +42,6 @@ import { AppRoutingModule } from './app-routing,module';
     AboutComponent,
     TopicsComponent,
     ServicesComponent,
-    CooperatewebServiceComponent,
-    DesktopappsServiceComponent,
-    WebappsServiceComponent,
-    OfficeServiceComponent,
-    TemplatesServiceComponent,
-    MobileappsServiceComponent,
   ],
   imports: [
     MaterializeModule,

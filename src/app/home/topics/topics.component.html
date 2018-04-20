@@ -1,6 +1,6 @@
 <div class="container margintop topic-set">
     <div class="topic" *ngFor="let topic of topics | async">
-        <a routerLink="/services/webapps">
+        <a routerLink="/services/{{topic.id}}">
             <div class="card">
                 <div class="card-content center-text">
                     <i class="medium material-icons teal-text text-teal-lighten-4">{{ topic.icon }}</i>
