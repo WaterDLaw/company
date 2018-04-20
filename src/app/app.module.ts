@@ -8,6 +8,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { NgxCarouselModule } from 'ngx-carousel';
 
 // Top level Components
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { AppRoutingModule } from './app-routing,module';
     AppRoutingModule,
     FormsModule,
     NouisliderModule,
+    NgxCarouselModule,
     AngularFireModule.initializeApp(environment.firebase, 'company'),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
