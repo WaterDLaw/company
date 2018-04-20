@@ -1,11 +1,11 @@
 <app-banner></app-banner>
 
 <h1>
-  {{ topic.title | async }}
+  {{ topic?.title }}
 </h1>
 <p>
-  {{ topic.summary | async }}
+  {{ topic?.summary }}
 </p>
 <div>
-  {{ topic.content | async }}
+  {{ topic?.content }}
 </div>

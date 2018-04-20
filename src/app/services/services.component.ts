@@ -13,7 +13,10 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.topic = this.db.collection('topic').doc(params.type).valueChanges();
+      const obs = this.db.collection('topics').doc(params.type).snapshotChanges().map(a => {
+        return a.payload.data();
+      });
+      obs.subscribe(topic => this.topic = topic);
     });
   }
 }
