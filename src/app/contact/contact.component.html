@@ -7,20 +7,17 @@
                 <!-- Basic Contact information -->
                 
                 <div class="col s12 m6 l6">
-
-                    
-
                     <div class="input-field col s6">
-                        <input placeholder="Vorname" id="first_name" type="text">
+                        <input id="first_name" type="text">
                         <label for="first_name">Vorname</label>
                     </div>
                     <div class="input-field col s6">
-                        <input placeholder="Nachname" id="sur_name" type="text">
+                        <input id="sur_name" type="text">
                         <label for="sur_name">Nachname</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input placeholder="E-Mail" id="email" type="text">
+                        <input id="email" type="text">
                         <label for="email">E-Mail</label>
                     </div>
 
@@ -32,9 +29,7 @@
                 </div>
 
                 <!-- Individual Contact informations -->
-                <div class="col s12 m 6 l6">
-                   
-                    
+                <div class="col s12 m6 l6">
                     Budget: {{budgetRange}} Fr.
                     <nouislider [connect]="[true, false]" [min]="500" [max]="100000" [step]="10" [(ngModel)]="budgetRange" (ngModelChange)="onChange($event)" [disabled]="disabled"></nouislider>
                     Dauer: {{dauerRange}} Monate

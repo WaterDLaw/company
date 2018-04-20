@@ -1,4 +1,8 @@
-import { Component } from "@angular/core";
+import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from 'angularfire2/firestore';
+import { Observable } from '@firebase/util';
+
+import { Topic } from '../../models/topic';
 
 @Component({
     selector: 'app-topics',
@@ -6,6 +10,15 @@ import { Component } from "@angular/core";
     styleUrls: ['./topics.component.css', '../../app.component.css']
 })
 
-export class TopicsComponent{
-
+export class TopicsComponent {
+    topics;
+    constructor(db: AngularFirestore) {
+        this.topics = db.collection('topics').snapshotChanges().map(actions => {
+            return actions.map(a => {
+              const data = a.payload.doc.data();
+              const id = a.payload.doc.id;
+              return { id, ...data };
+            });
+          });
+    }
 }
