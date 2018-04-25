@@ -2,7 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule } from '@angular/forms';
-import {NouisliderModule} from 'ng2-nouislider/src/nouislider';
+import { NouisliderModule } from 'ng2-nouislider/src/nouislider';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { NgxCarouselModule } from 'ngx-carousel';
 
 // Top level Components
 import { AppComponent } from './app.component';
@@ -23,13 +29,6 @@ import { AboutComponent } from './about/about.component';
 
 // Services
 import { ServicesComponent } from './services/services.component';
-import { CooperatewebServiceComponent } from './services/cooperateweb-services/cooperateweb_services.component';
-import { DesktopappsServiceComponent } from './services/desktopapps-services/desktopapps_services.component';
-import { WebappsServiceComponent } from "./services/webapps-services/webapps_services.component";
-import { OfficeServiceComponent } from "./services/office-services/office_services.component";
-import { TemplatesServiceComponent } from "./services/templates-services/templates_services.component";
-import { MobileappsServiceComponent } from "./services/mobileapps-services/mobileapps_services.component";
-
 import { AppRoutingModule } from './app-routing,module';
 
 @NgModule({
@@ -44,12 +43,6 @@ import { AppRoutingModule } from './app-routing,module';
     AboutComponent,
     TopicsComponent,
     ServicesComponent,
-    CooperatewebServiceComponent,
-    DesktopappsServiceComponent,
-    WebappsServiceComponent,
-    OfficeServiceComponent,
-    TemplatesServiceComponent,
-    MobileappsServiceComponent,
   ],
   imports: [
     MaterializeModule,
@@ -57,6 +50,11 @@ import { AppRoutingModule } from './app-routing,module';
     AppRoutingModule,
     FormsModule,
     NouisliderModule,
+    NgxCarouselModule,
+    AngularFireModule.initializeApp(environment.firebase, 'company'),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
   providers: [],
   bootstrap: [AppComponent]

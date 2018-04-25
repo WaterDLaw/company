@@ -1,26 +1,13 @@
 <div class="container">
-    <div class="row">
-        <div class="col s12 m12 l12">
-        <div materialize="carousel" [materializeParams]="[{fullWidth: true}]" class="carousel carousel-slider" data-indicators="true">
-                <div class="carousel-fixed-item center">
-                    
-                </div>
-                <div class="carousel-item " href="#one!">
-                    <app-news></app-news>
-                </div>
-                <div class="carousel-item" href="#two!">
-                    <app-news></app-news>
-                </div>
-                <div class="carousel-item" href="#three!">
-                    <app-news></app-news>
-                </div>
-                <div class="carousel-item" href="#four!">
-                    <app-news></app-news>
-                </div>
-                <div class="carousel-item" href="#five!">
-                    <app-news></app-news>
-                </div>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <ngx-carousel [inputs]="carousel" >
+        <ngx-item NgxCarouselItem *ngFor="let project of projects | async ">
+          <app-news [project]="project"></app-news>
+        </ngx-item>
+        <button NgxCarouselPrev class='leftRs'>&lt;</button>
+        <button NgxCarouselNext class='rightRs'>&gt;</button>
+      </ngx-carousel>
     </div>
+  </div>
 </div>

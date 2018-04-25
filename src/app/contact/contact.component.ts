@@ -12,5 +12,5 @@ export class ContactComponent {
     budgetRange: number[] = [500];
     dauerRange: number[] = [1];
 
-
+    onChange(ev) { }
 }

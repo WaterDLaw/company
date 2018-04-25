@@ -15,3 +15,14 @@ a:visited{
     background-color: #b2dfdb; 
 }
 
+.topic-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.topic {
+    width: 33%;
+    padding: 1%;
+}

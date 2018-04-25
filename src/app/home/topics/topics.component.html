@@ -1,91 +1,15 @@
-<div class="container margintop">
-    <div class="row">
-        <div class="col s12 m12 l12">
-
-            <div class="col s12 m4 l4">
-                <a routerLink="/services/webapps">    
-                    <div class="card">
-                        <div class="card-content center-text">
-                            <i class="medium material-icons teal-text text-teal-lighten-4">web</i>
-                            <h5>Web Applikationen</h5>
-                        </div>
-                        <div class="card-action">
-                            <p>Wir entwickeln individuelle Web-Applikation, welche auf Ihre Bedürfnisse angepasst sind.</p>
-                        </div>
-                    </div>
-                </a>
+<div class="container margintop topic-set">
+    <div class="topic" *ngFor="let topic of topics | async">
+        <a routerLink="/services/{{topic.id}}">
+            <div class="card">
+                <div class="card-content center-text">
+                    <i class="medium material-icons teal-text text-teal-lighten-4">{{ topic.icon }}</i>
+                    <h5>{{ topic.title }}</h5>
+                </div>
+                <div class="card-action">
+                    <p>{{ topic.summary }}</p>
+                </div>
             </div>
-
-            <div class="col s12 m4 l4">
-                <a routerLink="/services/mobileapps">
-                    <div class="card">
-                        <div class="card-content center-text">
-                            <i class="medium material-icons teal-text text-teal-lighten-4">apps</i>
-                            <h5>Mobile Apps</h5>
-                        </div>
-                        <div class="card-action">
-                            <p>Mithilfe des Ionic Frameworks entwickeln wir Crossplattform Mobile apps.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col s12 m4 l4">
-                <a routerLink="/services/desktopapps">
-                    <div class="card">
-                        <div class="card-content center-text">
-                            <i class="medium material-icons teal-text text-teal-lighten-4">desktop_windows</i>
-                            <h5>Desktop Apps</h5>
-                        </div>
-                        <div class="card-action">
-                            <p>Wollen Sie eine Applikation für Ihren Dekstop, wir können Ihnen weiterhelfen.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m12 l12">
-            <div class="col s12 m4 l4">
-                <a routerLink="/services/templates">
-                    <div class="card">
-                        <div class="card-content center-text">
-                            <i class="medium material-icons teal-text text-teal-lighten-4">palette</i>
-                            <h5>Consulting</h5>
-                        </div>
-                        <div class="card-action">
-                            <p>Wir beraten Sie in verschiedenen Themen rund um Software Entwicklung und Einführung.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m4 l4">
-                <a routerLink="/services/office">
-                    <div class="card">
-                        <div class="card-content center-text">
-                            <i class="medium material-icons teal-text text-teal-lighten-4">work</i>
-                            <h5>Office Lösungen</h5>
-                        </div>
-                        <div class="card-action">
-                            <p>Wir realisieren Ihre VBA Wunsch Applikationen in der Microsoft-Office Umgebung.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m4 l4">
-                <a routerLink="/services/cooperateweb">
-                    <div class="card">
-                        <div class="card-content center-text">
-                            <i class="medium material-icons teal-text text-teal-lighten-4">language</i>
-                            <h5>Cooperate Websites</h5>
-                        </div>
-                        <div class="card-action">
-                            <p>Wir helfen Ihnen sich ihm Web zu präsentieren und das volle Potential auszunutzen.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+        </a>
     </div>
 </div>
