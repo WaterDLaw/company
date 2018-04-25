@@ -42,16 +42,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
             return actions.map(a => {
                 const data = a.payload.doc.data();
                 const id = a.payload.doc.id;
-
-                const company = this.db.collection('company').doc(data.company.id);
-                const tech = data.tech.map(t => {
-                    return this.db.collection('tech').doc(t.id);
-                });
-                const devices = data.devices.map(dev => {
-                    return this.db.collection('devices').doc(dev.id);
-                });
-                const topic = this.db.collection('topic').doc(data.topic.id);
-                return { id, ...data, company, tech, topic, devices  };
+                return { id, ...data  };
             });
         });
 

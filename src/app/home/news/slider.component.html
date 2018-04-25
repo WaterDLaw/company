@@ -3,7 +3,7 @@
     <div class="col s12 m12 l12">
       <ngx-carousel [inputs]="carousel" >
         <ngx-item NgxCarouselItem *ngFor="let project of projects | async ">
-          <app-news></app-news>
+          <app-news [project]="project"></app-news>
         </ngx-item>
         <button NgxCarouselPrev class='leftRs'>&lt;</button>
         <button NgxCarouselNext class='rightRs'>&gt;</button>

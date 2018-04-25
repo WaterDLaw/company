@@ -9,29 +9,26 @@
         <!-- Product Description -->
         <div class="col s12 m6 l6">
             <div class="col s12">
-                <h4 class="teal-text text-lighten-3">Produkttitel</h4>
+                <h4 class="teal-text text-lighten-3">{{ project.title }}</h4>
                 <table>
                     <tbody>
                         <tr>
                             <td>Typ:</td>
-                            <td>Webapplikation</td>
+                            <td *ngIf="topic">{{ topic.title }}</td>
                         </tr>
                         <tr>
                             <td>Geräte:</td>
                             <td>
-                                <i class="material-icons">desktop_mac</i>
-                                <i class="material-icons">tablet_mac</i>
-                                <i class="material-icons">smartphone</i>
+                                <i *ngFor="let device of devices" class="material-icons">
+                                    {{ device.icon }}
+                                </i>
                             </td>
                         </tr>
                         <tr>
                             <td>Technologien:</td>
                             <td>
-                                <div class="chip">
-                                    Angular2
-                                </div>
-                                <div class="chip">
-                                    Firebase
+                                <div class="chip" *ngFor="let t of tech">
+                                    {{ t.label }}
                                 </div>
                             </td>
                         </tr>
@@ -39,7 +36,7 @@
                     </tbody>
                     
                 </table>
-                <p style="text-align: none !important;">Eine kurze Beschreibung der App welche die Highlights hervorheben sollte. <br>Maximal sollte es 2-3 Sätze sein</p>
+                <p style="text-align: none !important;">{{ project.description }}</p>
             </div>
         </div>
 
