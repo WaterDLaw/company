@@ -6,11 +6,13 @@ import { HomeComponent } from './home/home.component';
 
 // Services
 import { ServicesComponent } from './services/services.component';
+import {TagOverviewComponent} from './tag-overview/tag-overview.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'about', component: AboutComponent },
     { path: 'services/:type', component: ServicesComponent},
+    { path: 'tags/:tag', component: TagOverviewComponent}
 ];
 
 @NgModule({

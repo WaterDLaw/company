@@ -38,7 +38,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
 
         // changes the slide of the carousel every 5.5 seconds
         this.startInterval();
-        this.projects = this.db.collection('projects').snapshotChanges().map(actions => {
+        this.projects = this.db.collection('projects', ref => ref.where('featured', '==', true)).snapshotChanges().map(actions => {
             return actions.map(a => {
                 const data = a.payload.doc.data();
                 const id = a.payload.doc.id;

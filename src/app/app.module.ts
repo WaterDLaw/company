@@ -30,6 +30,7 @@ import { AboutComponent } from './about/about.component';
 // Services
 import { ServicesComponent } from './services/services.component';
 import { AppRoutingModule } from './app-routing,module';
+import { TagOverviewComponent } from './tag-overview/tag-overview.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AppRoutingModule } from './app-routing,module';
     AboutComponent,
     TopicsComponent,
     ServicesComponent,
+    TagOverviewComponent,
   ],
   imports: [
     MaterializeModule,
