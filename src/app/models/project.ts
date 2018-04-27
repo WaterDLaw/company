@@ -7,6 +7,8 @@ export interface Project {
     title: string;
     description: string;
     tech: Tech[];
+    featured: boolean;
+    image: string;
     company: Company;
     topic: Topic;
     devices: Device[];
