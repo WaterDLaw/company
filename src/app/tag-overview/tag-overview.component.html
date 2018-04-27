@@ -1,0 +1,24 @@
+<div *ngIf="tech">
+  <h1>{{ tech?.label }}</h1>
+  <p>
+    {{ tech?.description }}
+  </p>
+</div>
+<div *ngIf="!tech">
+  Loading...
+</div>
+<!--
+<h2>Services mit dieser Technologie</h2>
+<ul>
+  <li *ngFor="let project of projects | async">
+    {{ project.title }}
+  </li>
+</ul>
+-->
+<h2>Projekte mit dieser Technologie</h2>
+<ul>
+  <li *ngIf="!projects">Loading...</li>
+  <li *ngFor="let project of projects | async">
+    {{ project.title }}
+  </li>
+</ul>

@@ -1,6 +1,6 @@
 <div class="news">
     <div class="col s12 m12 l12">
-        
+
         <!-- Image Section -->
         <div class="col s12 m6 l6">
             <img class="responsive-img" src="assets/images/desktopTabletMobile.jpg">
@@ -27,14 +27,16 @@
                         <tr>
                             <td>Technologien:</td>
                             <td>
-                                <div class="chip" *ngFor="let t of tech">
-                                    {{ t.label }}
-                                </div>
+                                <a *ngFor="let t of tech" routerLink="/tags/{{t?.id}}" >
+                                    <div class="chip">
+                                        {{ t?.label }}
+                                    </div>
+                                </a>
                             </td>
                         </tr>
-                        
+
                     </tbody>
-                    
+
                 </table>
                 <p style="text-align: none !important;">{{ project.description }}</p>
             </div>

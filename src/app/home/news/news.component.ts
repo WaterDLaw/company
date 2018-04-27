@@ -21,8 +21,8 @@ export class NewsComponent implements OnChanges {
             this.topic = topic.data();
         });
         this.project.topic.get().then(topic => this.topic = topic.data());
-        this.project.tech.forEach((tech, i) =>  tech.get().then(res => this.tech[i] = res.data()));
         this.project.company.get().then(company => this.company = company.data());
+        this.project.tech.forEach((tech, i) =>  tech.get().then(res => this.tech[i] = { ...res.data(), id: res.id }));
         this.project.devices.forEach((tech, i) =>  tech.get().then(res => this.devices[i] = res.data()));
     }
 
