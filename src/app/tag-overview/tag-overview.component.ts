@@ -15,6 +15,8 @@ export class TagOverviewComponent implements OnInit {
   projects;
   topics;
 
+  show:boolean = false;
+
   constructor(private route: ActivatedRoute, private db: AngularFirestore) { }
 
   ngOnInit() {
@@ -24,7 +26,10 @@ export class TagOverviewComponent implements OnInit {
         .collection('tech')
         .doc<Tech>(this.id)
         .valueChanges()
-        .subscribe(tech => this.tech = tech);
+        .subscribe(tech =>  {
+          this.tech = tech;
+          this.show = true;
+        });
       this.projects = this.db
         .collection<Project>('projects')
         .valueChanges()

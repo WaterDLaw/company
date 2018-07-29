@@ -27,10 +27,15 @@ import { ContactComponent } from './contact/contact.component';
 // About related Components
 import { AboutComponent } from './about/about.component';
 
+// Tech related Components
+import { TechBannerComponent } from './tech-banner/tech-banner.component';
+
 // Services
 import { ServicesComponent } from './services/services.component';
 import { AppRoutingModule } from './app-routing,module';
 import { TagOverviewComponent } from './tag-overview/tag-overview.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +50,8 @@ import { TagOverviewComponent } from './tag-overview/tag-overview.component';
     TopicsComponent,
     ServicesComponent,
     TagOverviewComponent,
+    TechBannerComponent,
+    SafeHtmlPipe,
   ],
   imports: [
     MaterializeModule,

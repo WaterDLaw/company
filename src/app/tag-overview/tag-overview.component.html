@@ -1,12 +1,42 @@
 <div *ngIf="tech">
-  <h1>{{ tech?.label }}</h1>
-  <p>
-    {{ tech?.description }}
-  </p>
+  <!-- Banner section should also change depending on the tech -->
+  <app-tech-banner [tech]="tech"></app-tech-banner>
+
+  <div class="container">
+    <div class="row">
+      <!-- Main part -->
+      <div class="col s8">
+
+        <div [innerHtml]="tech?.description"></div>
+
+
+      </div>
+      <!-- Facts -->
+      <div class="col s3">
+        <div class="facts">
+          <h1>Facts </h1>
+          <hr />
+          <ul *ngFor="let fact of tech.facts">
+            <li><i class="tiny material-icons">info</i> {{fact}}</li>
+            <hr/>
+          </ul>
+        </div>
+      </div>
+   
+  </div>
+
+  <h1>Projekte mit dieser Technologie</h1>
+  <ul>
+    <li *ngIf="!projects">Loading...</li>
+    <li *ngFor="let project of projects | async">
+      {{ project.title }}
+    </li>
+  </ul>
+
 </div>
-<div *ngIf="!tech">
-  Loading...
-</div>
+
+
+
 <!--
 <h2>Services mit dieser Technologie</h2>
 <ul>
@@ -15,10 +45,4 @@
   </li>
 </ul>
 -->
-<h2>Projekte mit dieser Technologie</h2>
-<ul>
-  <li *ngIf="!projects">Loading...</li>
-  <li *ngFor="let project of projects | async">
-    {{ project.title }}
-  </li>
-</ul>
+

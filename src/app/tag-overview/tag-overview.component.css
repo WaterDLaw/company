@@ -1,0 +1,30 @@
+
+:host /deep/ p{
+    display: block;
+    font-size: 16px;
+}
+
+:host /deep/ h1{
+    display: block;
+    font-size: 26px;
+    font-weight: 300;
+    text-transform: capitalize !important;
+}
+
+i{
+    color: #4db6ac !important; 
+    vertical-align: middle;
+}
+
+li{
+    display: block;
+    font-size: 16px; 
+}
+
+.facts{
+    background-color: #e0f2f1;
+    height: auto;
+    width: auto;
+    margin: 2.1rem 0 1.68rem 0;
+    padding: 0.1rem 1rem 1.68rem 1rem;
+}
